@@ -49,7 +49,7 @@
 	
 			//HANDLE CHAT FETCHING
 		case "readChat":
-			print_r( readChat($connection, $user) );
+			echo( readChat($connection, $user) );
 			exit;
 			break;
 	

@@ -86,16 +86,16 @@
 /* GET THE CHATS ADDRESSED TO THE USER */	
 	function readChat( $connection, $user ){
 		
-		$da = array();
+		$da = "";
 		$query = $connection->query("SELECT * FROM chats WHERE _to='".$user."' OR _from='".$user."' ");
 		
 		$i = 0;
 		while( $resp = mysqli_fetch_array($query) ){
 			
 			if($resp['_from'] == $user ){
-				$da[$i] = "ME -> ". $resp['_to'].":\n\r ".$resp['_message']."\r\n\t ".$resp['_time'] ;			
+				$da .= "ME -> ". $resp['_to'].":\r ".$resp['_message']."\r\n\t ".$resp['_time']."\r\n" ;			
 			}else{
-				$da[$i] = $resp['_from'].": \n\r ".$resp['_message']."\r\n\t ".$resp['_time'];
+				$da .= $resp['_from'].": \r ".$resp['_message']."\r\n\t ".$resp['_time']."\r\n";
 			}
 			
 			$i++;

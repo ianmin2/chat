@@ -76,7 +76,7 @@ switch ($action){
 	
 	//HANDLE CHAT TRANSFER
 	case "doChat":
-		$url = "action=".$action."&to=".@$argv[2]."&from=".@$argv[3]."&message=".@$argv[4];
+		$url = "action=".$action."&to=".@$argv[2]."&from=".@$argv[3]."&message=".@htmlspecialchars(addslashes($argv[4]));
 		curl($url, $filename);
 	break;
 	
