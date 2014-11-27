@@ -45,7 +45,7 @@
 		
 		if(checkUser($connection, $to) == 1){
 		
-			$now = date("d-m-Y h:i:s");
+			$now = date("h:i:s");
 			$query = $connection->query("INSERT INTO chats ( _to, _from, _message, _time  ) VALUES ( '".$to."', '".$from."', '".$message."', '".$now."') ");
 			
 			if($query){
@@ -93,9 +93,9 @@
 		while( $resp = mysqli_fetch_array($query) ){
 			
 			if($resp['_from'] == $user ){
-				$da .= "ME -> ". $resp['_to'].":\r ".$resp['_message']."\r\n\t ".$resp['_time']."\r\n" ;			
+				$da .= "ME => ".$resp['_to']."  \r\n ".$resp['_message']."\r\n\t ".$resp['_time']."\r\n\r\n" ;			
 			}else{
-				$da .= $resp['_from'].": \r ".$resp['_message']."\r\n\t ".$resp['_time']."\r\n";
+				$da .= $resp['_from'].": \r\n ".$resp['_message']."\r\n\t ".$resp['_time']."\r\n\r\n";
 			}
 			
 			$i++;
