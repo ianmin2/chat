@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1417105195 source:c:\users\mtazy\documents\codeblocks\chat2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1417096762 source:c:\users\mtazy\documents\codeblocks\chat2\adduser.c
+
+1417096764 source:c:\users\semasuka\desktop\chat2\adduser.c
+
+1417105920 source:c:\users\semasuka\desktop\chat2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
