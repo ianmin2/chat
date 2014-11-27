@@ -2,7 +2,7 @@
 
 	include_once 'index.php';
 	
-	$args = $_REQUEST;
+	$args = @$_REQUEST;
 	
 	/* GENERAL RECEIVING FORMAT */
 	/*
@@ -16,13 +16,13 @@
 				]
 	*/
 	/* EO RECEIVING  FORMAT */
-	$user 		= $args['user'] ;
-	$pass 		= $args['pass'];
-	$to   		= $args['to'];
-	$from 		= $args['from'];
-	$message 	= $args['message'];
+	$user 		= @$args['user'] ;
+	$pass 		= @$args['pass'];
+	$to   		= @$args['to'];
+	$from 		= @$args['from'];
+	$message 	= @$args['message'];
 	
-	switch ($args['action']){
+	switch (@$args['action']){
 	
 		//HANDLE USER ADDITION
 		case "addUser":
